@@ -1,0 +1,2 @@
+*.txt linguist-vendored=true
+*/contrib/* linguist-vendored=true
