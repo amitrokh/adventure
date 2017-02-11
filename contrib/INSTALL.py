@@ -383,7 +383,7 @@ def create_startup_scripts():
     "echo \"$(date)\" >> $LOGFILE\n"+
     "echo \"============================\" >> $LOGFILE\n"+
     "echo \"\" >> $LOGFILE\n"+
-    "echo \"$(roslaunch myturtlebot_bringup minimal.launch &>> $LOGFILE )\"\n")
+    "echo \"$(roslaunch adventure_bringup adventure.launch &>> $LOGFILE )\"\n")
     write_file_safely(HOME_DIR+"/.user_startup.sh", user_format_str)
 
     root_format_str = gen_bash_header(HOME_DIR+"/.root_startup.log")
