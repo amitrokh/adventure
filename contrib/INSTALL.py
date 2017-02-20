@@ -54,8 +54,8 @@ HOME_DIR = os.path.expanduser("~")
 USERNAME = getpass.getuser()
 
 # Startup related stuff
-DEVS_TO_WAIT = ['usb-FTDI_FT232R_USB_UART_AL00CIPJ-if00-port0', 
-                'usb-Yujin_Robot_iClebo_Kobuki_kobuki_A601D9PH-if00-port0']
+DEVS_TO_WAIT = ['/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AL00CIPJ-if00-port0', 
+                '/dev/serial/by-id/usb-Yujin_Robot_iClebo_Kobuki_kobuki_A601D9PH-if00-port0']
 WIFI_NAME = 'adventure-wifi'
 
 
@@ -458,8 +458,8 @@ install_project_deps()
 init_workspace() 
 
 # Configure ~/.bashrc for ROS
-bashrc = ("source " + LOCAL_BASH_FILE + GENERATOR_MARKER + '\n') + bashrc
-bashrc = ("source " + ROS_INSTALL_DIR + "/setup.bash" + GENERATOR_MARKER + '\n') + bashrc
+bashrc = bashrc + ("source " + LOCAL_BASH_FILE + GENERATOR_MARKER + '\n')
+bashrc = bashrc + ("source " + ROS_INSTALL_DIR + "/setup.bash" + GENERATOR_MARKER + '\n')
 bashrc = bashrc + ("export PATH=" + LAUNCHER_DIR + ":$PATH" + GENERATOR_MARKER + '\n')
 
 print wht("")
