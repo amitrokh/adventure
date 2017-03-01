@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <launch>
-
   <node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen" respawn="true">
+      <param name="port" value="$(env ARM)"/>
       <rosparam file="$(find adventure_bringup)/config/arm.yaml" command="load" />
   </node>
 

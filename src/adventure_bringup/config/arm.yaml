@@ -1,4 +1,3 @@
-port: /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AL00CIPJ-if00-port0
 read_rate: 15
 write_rate: 25
 joints: {
