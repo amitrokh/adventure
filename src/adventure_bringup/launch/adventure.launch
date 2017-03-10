@@ -12,4 +12,9 @@
       <param name="pad_width" value="0.0254"/>
   </node>
 
+  <include file="$(find openni_launch)/launch/openni.launch"/>
+
+  <node name="laserscan" pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" respawn="true">
+      <remap from="image" to="/camera/depth/image_raw"/>
+  </node>
 </launch>
