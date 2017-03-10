@@ -3,4 +3,5 @@
 /contrib/launchers_gen/*
 *~
 *.pyc
+*.swp
 .catkin_workspace
