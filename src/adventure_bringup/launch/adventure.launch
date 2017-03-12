@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 
 <launch>
+  <include file="$(find turtlebot_bringup)/launch/minimal.launch"/>
+
   <node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen" respawn="true">
       <param name="port" value="$(env ARM)"/>
       <rosparam file="$(find adventure_bringup)/config/arm.yaml" command="load" />
@@ -12,7 +14,7 @@
       <param name="pad_width" value="0.0254"/>
   </node>
 
-  <include file="$(find openni_launch)/launch/openni.launch"/>
+  <include file="$(find openni2_launch)/launch/openni2.launch"/>
 
   <node name="laserscan" pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" respawn="true">
       <remap from="image" to="/camera/depth/image_raw"/>
